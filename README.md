@@ -21,29 +21,19 @@ The ZIP file contains:
     - `videos/val`: directory with 128 videos (.MP4), one for each validation sequence
 
 - `to_imgs.py`: Python script that, given a video, splits it into its frames and saves them in a specified directory with the desired format (default = `JPG`)
-
     - tested with Python 3.6.5
-
     - requires `click`, `imageio` and `path`
-
     - use `python to_imgs.py --help` to read the help message
-
     - usage example: 
-
         ````bash
         python to_imgs.py --in_mp4_file_path='videos/train/seq_42.mp4' --out_dir_path='frames/seq_42'
         ````
 
 - `visualize.py`: Python script that provides a visual representation of the annotations.
-
     - tested with Python 3.6.5
-
     - requires `click`, `cv2`, `imageio`,  `matplotlib`, `numpy`,  and `path`
-
     - use `python visualize.py --help` to read the help message
-
     - usage example: 
-
       ```bash
       python to_imgs.py --in_mp4_file_path='videos/train/seq_42.mp4' --json_file_path='annotations/train/seq_42.json' --out_mp4_file_path='vis_ann/seq_42.mp4'
       ```
