@@ -59,7 +59,7 @@ Each annotation file refers to a specific sequence (e.g. `seq_42.json` is the vi
 
 * _Note_: 3D coordinates are relative to the position of the camera.
 
-#### Joint Types
+### Joint Types
 
 The associations between numerical identifier and type of joint are the following:
 
