@@ -5,11 +5,11 @@ import click
 import imageio
 from path import Path
 
-
 H1 = 'path of the video from which you want to extract the frames'
 H2 = 'directory where you want to save the extracted frames'
 H3 = 'number from which to start counting the video frames; DEFAULT = 1'
 H4 = 'the format to use to save the images/frames; DEFAULT = jpg'
+
 
 @click.command()
 @click.option('--in_mp4_file_path', type=click.Path(exists=True), prompt='Enter \'in_mp4_file_path\'', help=H1)

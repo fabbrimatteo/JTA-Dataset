@@ -48,8 +48,8 @@ class Joint(object):
 		self.x3d = array[5]
 		self.y3d = array[6]
 		self.z3d = array[7]
-		self.occ = bool(array[8])
-		self.soc = bool(array[9])
+		self.occ = bool(array[8])  # is this joint occluded?
+		self.soc = bool(array[9])  # is this joint self-occluded?
 
 
 	@property
@@ -148,5 +148,3 @@ class Joint(object):
 
 
 	__repr__ = __str__
-
-
