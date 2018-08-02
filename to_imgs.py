@@ -5,6 +5,8 @@ import click
 import imageio
 from path import Path
 
+imageio.plugins.ffmpeg.download()
+
 H1 = 'path of the video from which you want to extract the frames'
 H2 = 'directory where you want to save the extracted frames'
 H3 = 'number from which to start counting the video frames; DEFAULT = 1'
@@ -26,9 +28,13 @@ def main(in_mp4_file_path, out_dir_path, first_frame, img_format):
 	if not out_dir_path.exists():
 		out_dir_path.makedirs()
 	reader = imageio.get_reader(in_mp4_file_path)
+
+	print(f'▸ extracting frames of \'{in_mp4_file_path}\'')
 	for frame_number, image in enumerate(reader):
 		n = first_frame + frame_number
-		imageio.imwrite(out_dir_path/f'{n}.{img_format}', image[:, :, ::-1])
+		imageio.imwrite(out_dir_path/f'{n}.{img_format}', image)
+		print(f'\r▸ progress: {100*(frame_number/899):6.2f}%', end='')
+	print(f'\n▸ direcory with extracted frames: \'{out_dir_path.abspath()}\'\n')
 
 
 if __name__ == '__main__':

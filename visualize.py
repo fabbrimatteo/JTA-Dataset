@@ -8,10 +8,12 @@ import click
 import imageio
 import matplotlib.pyplot as plt
 import numpy as np
+from path import Path
 
 from joint import Joint
 from pose import Pose
 
+imageio.plugins.ffmpeg.download()
 MAX_COLORS = 42
 
 
@@ -54,6 +56,11 @@ def main(in_mp4_file_path, json_file_path, out_mp4_file_path, hide):
 	"""
 	Script that provides a visual representation of the annotations
 	"""
+
+	out_mp4_file_path = Path(out_mp4_file_path)
+	if not out_mp4_file_path.parent.exists():
+		out_mp4_file_path.parent.makedirs()
+
 	reader = imageio.get_reader(in_mp4_file_path)
 	writer = imageio.get_writer(out_mp4_file_path, fps=30)
 
@@ -63,6 +70,7 @@ def main(in_mp4_file_path, json_file_path, out_mp4_file_path, hide):
 
 	colors = get_colors(number_of_colors=MAX_COLORS, cmap_name='jet')
 
+	print(f'▸ visualizing annotations of \'{in_mp4_file_path}\'')
 	for frame_number, image in enumerate(reader):
 
 		# NOTE: frame #0 does NOT exists: first frame is #1
@@ -83,7 +91,10 @@ def main(in_mp4_file_path, json_file_path, out_mp4_file_path, hide):
 			image = pose.draw(image=image, color=color)
 
 		writer.append_data(image)
+		print(f'\r▸ progress: {100*(frame_number/899):6.2f}%', end='')
+
 	writer.close()
+	print(f'\n▸ video with annotations: \'{out_mp4_file_path.abspath()}\'\n')
 
 
 if __name__ == '__main__':
