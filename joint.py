@@ -54,7 +54,7 @@ class Joint(object):
 
 	@property
 	def cam_distance(self):
-		# type: (Joint) -> float
+		# type: () -> float
 		"""
 		:return: distance of the joint from the camera
 		"""
@@ -64,7 +64,7 @@ class Joint(object):
 
 	@property
 	def visible(self):
-		# type: (Joint) -> bool
+		# type: () -> bool
 		"""
 		:return: True if the joint is visible, False otherwise
 		"""
@@ -73,7 +73,7 @@ class Joint(object):
 
 	@property
 	def pos2d(self):
-		# type: (Joint) -> Tuple[int, int]
+		# type: () -> Tuple[int, int]
 		"""
 		:return: 2D coordinates of the joints [px]
 		"""
@@ -82,7 +82,7 @@ class Joint(object):
 
 	@property
 	def pos3d(self):
-		# type: (Joint) -> Tuple[float, float, float]
+		# type: () -> Tuple[float, float, float]
 		"""
 		:return: 3D coordinates of the joints [m]
 		"""
@@ -91,7 +91,7 @@ class Joint(object):
 
 	@property
 	def color(self):
-		# type: (Joint) -> Tuple[int, int, int]
+		# type: () -> Tuple[int, int, int]
 		"""
 		:return: the color with which to draw the joint;
 		this color is chosen based on the visibility of the joint:
@@ -109,7 +109,7 @@ class Joint(object):
 
 	@property
 	def radius(self):
-		# type: (Joint) -> int
+		# type: () -> int
 		"""
 		:return: appropriate radius [px] for the circle that represents the joint;
 		this radius is a function of the distance of the joint from the camera
@@ -120,7 +120,7 @@ class Joint(object):
 
 	@property
 	def name(self):
-		# type: (Joint) -> str
+		# type: () -> str
 		"""
 		:return: name of the joint (eg: 'neck', 'left_elbow', ...)
 		"""

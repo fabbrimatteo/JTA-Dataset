@@ -39,7 +39,7 @@ class Pose(list):
 
 	@property
 	def invisible(self):
-		# type: (Pose) -> bool
+		# type: () -> bool
 		"""
 		:return: True if all the joints of the pose are occluded, False otherwise
 		"""

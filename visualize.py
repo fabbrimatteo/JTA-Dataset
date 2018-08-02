@@ -43,6 +43,7 @@ H2 = 'path of JSON containing the annotations you want to visualize'
 H3 = 'path of the output video with the annotations'
 H4 = 'if `hide` the annotations of people completely occluded by objects will not be displayed in the output video'
 
+
 @click.command()
 @click.option('--in_mp4_file_path', type=click.Path(exists=True), prompt='Enter \'in_mp4_file_path\'', help=H1)
 @click.option('--json_file_path', type=click.Path(exists=True), prompt='Enter \'json_file_path\'', help=H2)
@@ -65,7 +66,7 @@ def main(in_mp4_file_path, json_file_path, out_mp4_file_path, hide):
 	for frame_number, image in enumerate(reader):
 
 		# NOTE: frame #0 does NOT exists: first frame is #1
-		frame_data = data[data[:, 0] == frame_number + 1]
+		frame_data = data[data[:, 0] == frame_number + 1]  # type: np.ndarray
 
 		for p_id in set(frame_data[:, 1]):
 			pose = get_pose(frame_data=frame_data, person_id=p_id)
