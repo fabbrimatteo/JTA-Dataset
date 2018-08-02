@@ -54,7 +54,7 @@ def main(in_mp4_file_path, json_file_path, out_mp4_file_path, hide):
 	Script that provides a visual representation of the annotations
 	"""
 	reader = imageio.get_reader(in_mp4_file_path)
-	writer = imageio.get_writer(out_mp4_file_path, fps=25)
+	writer = imageio.get_writer(out_mp4_file_path, fps=30ĸ)
 
 	with open(json_file_path, 'r') as json_file:
 		data = json.load(json_file)
