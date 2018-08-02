@@ -70,7 +70,7 @@ def main(in_mp4_file_path, json_file_path, out_mp4_file_path, hide):
 
 	colors = get_colors(number_of_colors=MAX_COLORS, cmap_name='jet')
 
-	print(f'▸ visualizing annotations of \'{in_mp4_file_path}\'')
+	print(f'▸ visualizing annotations of \'{Path(in_mp4_file_path).abspath()}\'')
 	for frame_number, image in enumerate(reader):
 
 		# NOTE: frame #0 does NOT exists: first frame is #1
@@ -90,7 +90,7 @@ def main(in_mp4_file_path, json_file_path, out_mp4_file_path, hide):
 			# draw pose on image
 			image = pose.draw(image=image, color=color)
 
-		writer.append_data(image)
+		writer.append_data(np.vstack([image, image[-8:, :]]))
 		print(f'\r▸ progress: {100*(frame_number/899):6.2f}%', end='')
 
 	writer.close()

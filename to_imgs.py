@@ -29,7 +29,7 @@ def main(in_mp4_file_path, out_dir_path, first_frame, img_format):
 		out_dir_path.makedirs()
 	reader = imageio.get_reader(in_mp4_file_path)
 
-	print(f'▸ extracting frames of \'{in_mp4_file_path}\'')
+	print(f'▸ extracting frames of \'{Path(in_mp4_file_path).abspath()}\'')
 	for frame_number, image in enumerate(reader):
 		n = first_frame + frame_number
 		imageio.imwrite(out_dir_path/f'{n}.{img_format}', image)
