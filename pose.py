@@ -58,9 +58,10 @@ class Pose(list):
 		"""
 		# draw limb(s) segments
 		for (j_id_a, j_id_b) in Pose.LIMBS:
-			joint_a = self[j_id_a]
-			joint_b = self[j_id_b]
-			cv2.line(image, joint_a.pos2d, joint_b.pos2d, color=color, thickness=1)
+			joint_a = self[j_id_a] # type: Joint
+			joint_b = self[j_id_b] # type: Joint
+			t = 1 if joint_a.cam_distance > 25 else 2
+			cv2.line(image, joint_a.pos2d, joint_b.pos2d, color=color, thickness=t)
 
 		# draw joint(s) circles
 		for joint in self:
