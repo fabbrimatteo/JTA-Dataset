@@ -63,6 +63,15 @@ class Joint(object):
 
 
 	@property
+	def is_on_screen(self):
+		# type: () -> bool
+		"""
+		:return: True if the joint is on screen, False otherwise
+		"""
+		return (0 <= self.x2d <= 1920) and (0 <= self.y2d <= 1080)
+
+
+	@property
 	def visible(self):
 		# type: () -> bool
 		"""
