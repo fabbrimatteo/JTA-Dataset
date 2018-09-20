@@ -1,0 +1,7 @@
+click==6.7
+opencv_python==3.4.2.17
+matplotlib==2.2.3
+numpy==1.15.1
+typing==3.6.4
+imageio==2.4.1
+path.py==11.0.1
