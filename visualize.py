@@ -62,7 +62,7 @@ def main(in_mp4_file_path, json_file_path, out_mp4_file_path, hide):
 	"""
 
 	out_mp4_file_path = Path(out_mp4_file_path)
-	if not out_mp4_file_path.parent.exists():
+	if not out_mp4_file_path.parent.exists() and out_mp4_file_path.parent != Path(''):
 		out_mp4_file_path.parent.makedirs()
 
 	reader = imageio.get_reader(in_mp4_file_path)
