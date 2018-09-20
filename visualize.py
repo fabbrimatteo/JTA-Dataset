@@ -2,6 +2,7 @@
 # ---------------------
 
 import json
+import sys
 from typing import *
 
 import click
@@ -15,6 +16,9 @@ from pose import Pose
 
 imageio.plugins.ffmpeg.download()
 MAX_COLORS = 42
+
+# check python version
+assert sys.version_info >= (3, 6), '[!] This script requires Python >= 3.6'
 
 
 def get_colors(number_of_colors, cmap_name='rainbow'):

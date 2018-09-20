@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 # ---------------------
 
+import sys
+
 import click
 import imageio
 from path import Path
@@ -11,6 +13,9 @@ H1 = 'path of the video from which you want to extract the frames'
 H2 = 'directory where you want to save the extracted frames'
 H3 = 'number from which to start counting the video frames; DEFAULT = 1'
 H4 = 'the format to use to save the images/frames; DEFAULT = jpg'
+
+# check python version
+assert sys.version_info >= (3, 6), '[!] This script requires Python >= 3.6'
 
 
 @click.command()
