@@ -14,11 +14,11 @@ We collected a set of 512 full-HD videos (256 for training and 256 for testing),
   bash download_data.sh
   ```
 
-- In order to start your download you will be asked to enter the `JTA-Key` we have sent you by email.
+- In order to start your download you will be asked to enter the **`JTA-Key`** we have sent you by email.
 
 - If you want to manually download the data, use the following link:
 
-  - https://<span></span>drive.google.com/open?id=`JTA-Key`
+  - https://<span></span>drive.google.com/open?id=**`JTA-Key`**
 
 ## `JTA-Dataset` File Contents
 
