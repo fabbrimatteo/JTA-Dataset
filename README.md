@@ -18,7 +18,7 @@ We collected a set of 512 full-HD videos (256 for training and 256 for testing),
 
 - If you want to manually download the data, use the following link:
 
-  - [https://drive.google.com/open?id=]()**`JTA-Key`**
+  - [https://drive.google.com/open?id=](https://drive.google.com/open?id=)**`JTA-Key`**
 
 ## `JTA-Dataset` File Contents
 
