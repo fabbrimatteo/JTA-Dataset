@@ -5,6 +5,20 @@ We collected a set of 512 full-HD videos (256 for training and 256 for testing),
 
 ![banner](https://github.com/BobbySolo/JTA-Utils/blob/master/jta_banner.png)
 
+
+## Obtain the Dataset
+
+To obtain the Dataset, you firstly need the **`JTA-Key`**, so please send an email to [Ing. Matteo Fabbri](http://imagelab.ing.unimore.it/imagelab/person.asp?idpersona=99) (with object "JTA Dataset Download") stating:
+
+- Your name, title and affilation
+
+- Your intended use of the data
+
+- The following statement:
+    > With this email we declare that we will use the JTA Dataset for research and educational purposes only, since we are aware that commercial use is prohibited. We also undertake to purchase a copy of Grand Theft Auto V.
+
+We will promptly reply with the **`JTA-Key`**.
+
 ## How to Start
 
 - Clone the _JTA-Dataset_ repo and run `download_data.sh` to download videos and annotations.
