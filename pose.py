@@ -72,35 +72,6 @@ class Pose(list):
 		return [x_min, y_min, width, height]
 
 
-	@property
-	def coco_annotation(self):
-		# type: () -> Dict
-		"""
-		:return: COCO annotation dictionary of the pose
-		==========================================================
-		NOTE#1: in COCO, each keypoint is represented by its (x,y)
-		2D location and a visibility flag `v` defined as:
-			- `v=0` ==> not labeled (in which case x=y=0)
-			- `v=1` ==> labeled but not visible
-			- `v=2` ==> labeled and visible
-		==========================================================
-		NOTE#2: in COCO, a keypoint is considered visible if it
-		falls inside the object segment. In JTA there are no
-		object segments and every keypoint is labelled, so we
-		v=2 for each keypoint.
-		==========================================================
-		"""
-		keypoints = []
-		for j in self:
-			keypoints += [j.x2d, j.y2d, 2]
-		annotation = {
-			'keypoints': keypoints,
-			'num_keypoints': len(self),
-			'bbox': self.bbox_2d
-		}
-		return annotation
-
-
 	def draw(self, image, color):
 		# type: (np.ndarray, List[int]) -> np.ndarray
 		"""
