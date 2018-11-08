@@ -8,7 +8,7 @@ We collected a set of 512 full-HD videos (256 for training and 256 for testing),
 
 ## Obtain the Dataset
 
-To obtain the Dataset, you firstly need the **`JTA-Key`**, so please send an email to [Ing. Matteo Fabbri](http://imagelab.ing.unimore.it/imagelab/person.asp?idpersona=99) (with object "JTA Dataset Download") stating:
+To obtain the Dataset, you first need the **`JTA-Key`**, so please send an email to [Ing. Matteo Fabbri](http://imagelab.ing.unimore.it/imagelab/person.asp?idpersona=99) (with object "JTA Dataset Download") stating:
 
 - Your name, title and affilation
 
