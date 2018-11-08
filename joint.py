@@ -8,6 +8,10 @@ import numpy as np
 
 
 class Joint(object):
+	"""
+	a Joint is a keypoint of the human body.
+	"""
+
 	# list of joint names
 	NAMES = [
 		'head_top',
@@ -36,7 +40,7 @@ class Joint(object):
 
 
 	def __init__(self, array):
-		# type: (np.ndarray) -> Joint
+		# type: (np.ndarray) -> None
 		"""
 		:param array: array version of the joint
 		"""
