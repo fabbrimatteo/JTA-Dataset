@@ -73,7 +73,7 @@ After the data download, your `JTA-Dataset` directory will contain the following
 
 ## Annotations 
 
-Each annotation file refers to a specific sequence (e.g. `seq_42.json` is the video annotation file `seq_42.mp4`). An annotation file consists of a list of lists, that is a matrix having _N_ rows and 10 columns. Each row of the matrix contains the data of a joint; these data are organized as follows:
+Each annotation file refers to a specific sequence (e.g. `seq_42.json` is the annotation of `seq_42.mp4`). An annotation file consists of a list of lists, that is a matrix having _N_ rows and 10 columns. Each row of the matrix contains the data of a joint; these data are organized as follows:
 
 | Element  | Name          | Description                                                  |
 | -------- | ------------- | ------------------------------------------------------------ |
