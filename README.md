@@ -66,6 +66,15 @@ After the data download, your `JTA-Dataset` directory will contain the following
       ```bash
       python visualize.py --in_mp4_file_path='videos/train/seq_42.mp4' --json_file_path='annotations/train/seq_42.json' --out_mp4_file_path='vis_ann/seq_42.mp4'
       ```
+      
+- `coco_style_convert.py`: Python script that for annotation conversion (from JTA format to COCO format).
+    - requires Python >= 3.6 (see [`requirements.txt`](https://github.com/BobbySolo/JTA-Dataset/blob/master/requirements.txt) for more details)
+    - use `python coco_style_convert.py --help` to read the help message
+    - usage example: 
+      ```bash
+      python coco_style_convert.py --json_file_path='annotations/train/seq_42.json' --out_dir_path='coco_annotations/train'
+      ```
+      
 - `joint.py` and `pose.py`: support classes for the scripts.
 
 - `README.md`: readme with a link to this page.
@@ -151,6 +160,10 @@ The associations between numerical identifier and type of joint are the followin
   ```ptyhon
   np.save(json_file_path.replace('json', 'npy'), matrix)
   ```
+  
+### COCO-Style Annotations 
+
+If you want, you can convert our annotations to [COCO format](http://cocodataset.org/#format-data) using the `coco_style_convert.py` script, but note that occlusion, tracking and 3D informations are not available in that format. 
 
 ## Important Note
 
