@@ -67,7 +67,7 @@ After the data download, your `JTA-Dataset` directory will contain the following
       python visualize.py --in_mp4_file_path='videos/train/seq_42.mp4' --json_file_path='annotations/train/seq_42.json' --out_mp4_file_path='vis_ann/seq_42.mp4'
       ```
       
-- `coco_style_convert.py`: Python script that for annotation conversion (from JTA format to COCO format).
+- `coco_style_convert.py`: Python script for annotation conversion (from JTA format to COCO format).
     - requires Python >= 3.6 (see [`requirements.txt`](https://github.com/BobbySolo/JTA-Dataset/blob/master/requirements.txt) for more details)
     - use `python coco_style_convert.py --help` to read the help message
     - usage example: 
