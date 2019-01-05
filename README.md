@@ -3,7 +3,7 @@
 JTA (_Joint Track Auto_) is a huge dataset for pedestrian pose estimation and tracking in urban scenarios created by exploiting the highly photorealistic video game *Grand Theft Auto V*. 
 We collected a set of 512 full-HD videos (256 for training and 256 for testing), 30 seconds long, recorded at 30 fps.
 
-![banner](https://github.com/BobbySolo/JTA-Utils/blob/master/jta_banner.png)
+![banner](https://github.com/BobbySolo/JTA-Utils/blob/master/jta_banner.jpg)
 
 
 ## Obtain the Dataset
