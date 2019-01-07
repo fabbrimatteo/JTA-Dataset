@@ -34,7 +34,7 @@ We will promptly reply with the **`JTA-Key`**.
 
   - [https://drive.google.com/open?id=](https://drive.google.com/open?id=)**`JTA-Key`**
 
-## `JTA-Dataset` File Contents
+## `JTA-Dataset` Contents
 
 After the data download, your `JTA-Dataset` directory will contain the following files :
 
