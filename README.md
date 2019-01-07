@@ -97,8 +97,16 @@ Each annotation file refers to a specific sequence (e.g. `seq_42.json` is the an
 | `row[8]` | occluded      | `1` if the joint is occluded; `0` otherwise                  |
 | `row[9]` | self-occluded | `1` if the joint is occluded by its owner; `0` otherwise     |
 
-* _Note_ #1: 2D coordinates are relative to the top left corner of the frame, while 3D coordinates are relative to the position of the camera.
+* _Note_ #1: 2D coordinates are relative to the top left corner of the frame, while 3D coordinates are in the standard camera coordinate system.
 * _Note_ #2: frames are counted starting from 1.
+
+### Camera
+Each sequence has been recorded with the same camera with the followng intrinsic matrix:
+
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=K&space;=&space;\begin{pmatrix}&space;1158&space;&&space;0&space;&&space;960\\&space;0&space;&&space;1158&space;&&space;540\\&space;0&space;&&space;0&space;&&space;1&space;\end{pmatrix}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?K&space;=&space;\begin{pmatrix}&space;1158&space;&&space;0&space;&&space;960\\&space;0&space;&&space;1158&space;&&space;540\\&space;0&space;&&space;0&space;&&space;1&space;\end{pmatrix}" title="K = \begin{pmatrix} 1158 & 0 & 960\\ 0 & 1158 & 540\\ 0 & 0 & 1 \end{pmatrix}" /></a>
+
+**WARNING**: on 7 January 2019 we have changed the annotations, converting the 3D coordinates to the standard camera coordinate system.
 
 ### Joint Types
 
