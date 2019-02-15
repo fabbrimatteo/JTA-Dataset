@@ -51,14 +51,14 @@ After the data download, your `JTA-Dataset` directory will contain the following
     - `videos/test`: directory with 128 videos (.MP4), one for each testing sequence
     - `videos/val`: directory with 128 videos (.MP4), one for each validation sequence
 
-- `to_imgs.py`: Python script that, given a video, splits it into its frames and saves them in a specified directory with the desired format (default = `JPG`)
+- `to_imgs.py`: Python script that splits the videos into its frames and saves them in a specified directory with the desired format (default = `JPG`)
     - requires Python >= 3.6 (see [`requirements.txt`](https://github.com/BobbySolo/JTA-Dataset/blob/master/requirements.txt) for more details)
     - use `python to_imgs.py --help` to read the help message
     - use option `--img_format='png'` for better quality
     - each frame has a size of 1920×1080 _px_
     - usage example: 
         ````bash
-        python to_imgs.py --in_mp4_file_path='videos/train/seq_42.mp4' --out_dir_path='frames/seq_42' --img_format='jpg'
+        python to_imgs.py --out_dir_path='frames' --img_format='jpg'
         ````
 - `visualize.py`: Python script that provides a visual representation of the annotations.
     - requires Python >= 3.6 (see [`requirements.txt`](https://github.com/BobbySolo/JTA-Dataset/blob/master/requirements.txt) for more details)
@@ -73,7 +73,7 @@ After the data download, your `JTA-Dataset` directory will contain the following
     - use `python coco_style_convert.py --help` to read the help message
     - usage example: 
       ```bash
-      python coco_style_convert.py --json_file_path='annotations/train/seq_42.json' --out_dir_path='coco_annotations/train'
+      python coco_style_convert.py --out_dir_path='coco_annotations'
       ```
       
 - `joint.py` and `pose.py`: support classes for the scripts.
