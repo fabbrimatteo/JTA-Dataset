@@ -4,7 +4,7 @@ JTA (_Joint Track Auto_) is a huge dataset for pedestrian pose estimation and tr
 We collected a set of 512 full-HD videos (256 for training and 256 for testing), 30 seconds long, recorded at 30 fps.
 The dataset was created with [this tool](https://github.com/fabbrimatteo/JTA-Mods).
 
-![banner](https://github.com/BobbySolo/JTA-Utils/blob/master/jta_banner.jpg)
+![banner](https://github.com/fabbrimatteo/JTA-Dataset/blob/master/jta_banner.jpg)
 
 
 ## Obtain the Dataset
@@ -24,7 +24,7 @@ We will promptly reply with the **`JTA-Key`**.
 
 - Clone the _JTA-Dataset_ repo and run `download_data.sh` to download videos and annotations.
   ```bash
-  git clone https://github.com/BobbySolo/JTA-Dataset.git
+  git clone https://github.com/fabbrimatteo/JTA-Dataset.git
   cd JTA-Dataset
   bash download_data.sh
   ```
@@ -52,7 +52,7 @@ After the data download, your `JTA-Dataset` directory will contain the following
     - `videos/val`: directory with 128 videos (.MP4), one for each validation sequence
 
 - `to_imgs.py`: Python script that splits the videos into its frames and saves them in a specified directory with the desired format (default = `JPG`)
-    - requires Python >= 3.6 (see [`requirements.txt`](https://github.com/BobbySolo/JTA-Dataset/blob/master/requirements.txt) for more details)
+    - requires Python >= 3.6 (see [`requirements.txt`](https://github.com/fabbrimatteo/JTA-Dataset/blob/master/requirements.txt) for more details)
     - use `python to_imgs.py --help` to read the help message
     - use option `--img_format='png'` for better quality
     - each frame has a size of 1920×1080 _px_
@@ -61,7 +61,7 @@ After the data download, your `JTA-Dataset` directory will contain the following
         python to_imgs.py --out_dir_path='frames' --img_format='jpg'
         ````
 - `visualize.py`: Python script that provides a visual representation of the annotations.
-    - requires Python >= 3.6 (see [`requirements.txt`](https://github.com/BobbySolo/JTA-Dataset/blob/master/requirements.txt) for more details)
+    - requires Python >= 3.6 (see [`requirements.txt`](https://github.com/fabbrimatteo/JTA-Dataset/blob/master/requirements.txt) for more details)
     - use `python visualize.py --help` to read the help message
     - usage example: 
       ```bash
@@ -69,7 +69,7 @@ After the data download, your `JTA-Dataset` directory will contain the following
       ```
       
 - `coco_style_convert.py`: Python script for annotation conversion (from JTA format to COCO format).
-    - requires Python >= 3.6 (see [`requirements.txt`](https://github.com/BobbySolo/JTA-Dataset/blob/master/requirements.txt) for more details)
+    - requires Python >= 3.6 (see [`requirements.txt`](https://github.com/fabbrimatteo/JTA-Dataset/blob/master/requirements.txt) for more details)
     - use `python coco_style_convert.py --help` to read the help message
     - usage example: 
       ```bash
