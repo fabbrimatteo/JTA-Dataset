@@ -60,6 +60,15 @@ After the data download, your `JTA-Dataset` directory will contain the following
         ````bash
         python to_imgs.py --out_dir_path='frames' --img_format='jpg'
         ````
+- `to_poses.py`: Python script that splits the per sequence annotations into per frame annotations and saves them in a specified directory with the desired format (default = `numpy`)
+    - requires Python >= 3.6 (see [`requirements.txt`](https://github.com/fabbrimatteo/JTA-Dataset/blob/master/requirements.txt) for more details)
+    - use `python to_poses.py --help` to read the help message
+    - use option `--format=torch` to save the annotations using torch
+    - usage example: 
+        ````bash
+        python to_poses.py --out_dir_path='poses' --format='numpy'
+        ````
+    WARNING: before loading those annotations you have to import Joint from `joint.py` and Pose from `pose.py`.
 - `visualize.py`: Python script that provides a visual representation of the annotations.
     - requires Python >= 3.6 (see [`requirements.txt`](https://github.com/fabbrimatteo/JTA-Dataset/blob/master/requirements.txt) for more details)
     - use `python visualize.py --help` to read the help message
