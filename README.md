@@ -111,10 +111,9 @@ Each annotation file refers to a specific sequence (e.g. `seq_42.json` is the an
 ### Camera
 Each sequence has been recorded with the same camera with the followng intrinsic matrix:
 
-
 <a href="https://www.codecogs.com/eqnedit.php?latex=K&space;=&space;\begin{pmatrix}&space;1158&space;&&space;0&space;&&space;960\\&space;0&space;&&space;1158&space;&&space;540\\&space;0&space;&&space;0&space;&&space;1&space;\end{pmatrix}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?K&space;=&space;\begin{pmatrix}&space;1158&space;&&space;0&space;&&space;960\\&space;0&space;&&space;1158&space;&&space;540\\&space;0&space;&&space;0&space;&&space;1&space;\end{pmatrix}" title="K = \begin{pmatrix} 1158 & 0 & 960\\ 0 & 1158 & 540\\ 0 & 0 & 1 \end{pmatrix}" /></a>
 
-**WARNING**: on 7 January 2019 we have changed the annotations, converting the 3D coordinates to the standard camera coordinate system.
+**WARNING**: on 21 February 2019 we have changed the annotations, converting the 3D coordinates to the standard camera coordinate system. [Here](https://drive.google.com/open?id=1JZ5usEbosabcjj_YXT1Wr33NddNCDn3Z) you can download the new annotations separately.
 
 ### Joint Types
 
