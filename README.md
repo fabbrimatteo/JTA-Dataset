@@ -197,3 +197,7 @@ If you use it, please cite our [work](https://arxiv.org/abs/1803.08319).
    year      = {2018}
  }
 ```
+This project is licensed under the terms of the Creative Commons Attribution-NonCommercial 4.0 International License.
+
+## License
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Dataset" property="dct:title" rel="dct:type">JTA-Dataset</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
