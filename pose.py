@@ -73,8 +73,32 @@ class Pose(list):
 		width = x_max - x_min
 		height = y_max - y_min
 		return [x_min, y_min, width, height]
+	
+	
+	@property
+	def bbox_2d_padded(self, h_inc_perc=0.15, w_inc_perc=0.1):
+		x_min = int(np.min([j.x2d for j in self]))
+		y_min = int(np.min([j.y2d for j in self]))
+		x_max = int(np.max([j.x2d for j in self]))
+		y_max = int(np.max([j.y2d for j in self]))
+		width = x_max - x_min
+		height = y_max - y_min
 
+		inc_h = (height * h_inc_perc) / 2
+		inc_w = (width * w_inc_perc) / 2
 
+		x_min = x_min - inc_w
+		x_max = x_max + inc_w
+
+		y_min = y_min - inc_h
+		y_max = y_max + inc_h
+
+		width = x_max - x_min
+		height = y_max - y_min
+
+		return [x_min, y_min, width, height]
+
+	
 	@property
 	def coco_annotation(self):
 		# type: () -> Dict
