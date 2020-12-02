@@ -8,7 +8,6 @@ import imageio
 from path import Path
 
 
-imageio.plugins.ffmpeg.download()
 
 H1 = 'directory where you want to save the extracted frames'
 H2 = 'number from which to start counting the video frames; DEFAULT = 1'
