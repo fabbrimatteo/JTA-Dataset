@@ -14,7 +14,6 @@ from path import Path
 from joint import Joint
 from pose import Pose
 
-imageio.plugins.ffmpeg.download()
 MAX_COLORS = 42
 
 # check python version

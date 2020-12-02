@@ -23,11 +23,12 @@ We will promptly reply with the **`JTA-Key`**.
 
 ## How to Start
 
-- Clone the _JTA-Dataset_ repo and run `download_data.sh` to download videos and annotations.
+- Clone the _JTA-Dataset_ repo and run `download_data.py` to download videos and annotations.
   ```bash
+  pip install -r requirements.txt
   git clone https://github.com/fabbrimatteo/JTA-Dataset.git
   cd JTA-Dataset
-  bash download_data.sh
+  python download_data.py
   ```
 
 - In order to start your download you will be asked to enter the **`JTA-Key`** we have sent you by email.

@@ -1,7 +1,8 @@
 click==6.7
 opencv_python>=3.4
 matplotlib>=2.2
-numpy>=1.15
+numpy>=1.15,!=1.19.3
 typing>=3.6
 imageio>=2.4
 path.py>=11.0
+imageio-ffmpeg
