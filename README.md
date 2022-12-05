@@ -10,32 +10,7 @@ The dataset was created with [this tool](https://github.com/fabbrimatteo/JTA-Mod
 
 ## Obtain the Dataset
 
-To obtain the Dataset, you first need the **`JTA-Key`**, so please send an email to [Ing. Matteo Fabbri](http://imagelab.ing.unimore.it/imagelab/person.asp?idpersona=99) (with object "JTA Dataset Download") stating:
-
-- Your name, title and affilation
-
-- Your intended use of the data
-
-- The following statement:
-    > With this email we declare that we will use the JTA Dataset for research and educational purposes only, since we are aware that commercial use is prohibited. We also undertake to purchase a copy of Grand Theft Auto V.
-
-We will promptly reply with the **`JTA-Key`**.
-
-## How to Start
-
-- Clone the _JTA-Dataset_ repo and run `download_data.py` to download videos and annotations.
-  ```bash
-  git clone https://github.com/fabbrimatteo/JTA-Dataset.git
-  cd JTA-Dataset
-  pip install -r requirements.txt
-  python download_data.py
-  ```
-
-- In order to start your download you will be asked to enter the **`JTA-Key`** we have sent you by email.
-
-- If you want to manually download the data, use the following link:
-
-  - [https://drive.google.com/open?id=](https://drive.google.com/open?id=)**`JTA-Key`**
+You can download JTA [here](https://aimagelab.ing.unimore.it/go/JTA). By downloading the dataset you agree on the following statement: "I declare that I will use the JTA Dataset for research and educational purposes only, since I am aware that commercial use is prohibited. I also undertake to purchase a copy of Grand Theft Auto V."
 
 ## `JTA-Dataset` Contents
 
