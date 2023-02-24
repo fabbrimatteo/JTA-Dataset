@@ -12,8 +12,48 @@ from path import Path
 from joint import Joint
 from pose import Pose
 
+# Mapping used for the conversion from JTA to posetrack-keypoint format
+index_mapping = [
+    1,  # nose becomes head_center
+    2,  # head_bottom becomes neck
+    0,  # head_top is head_top
+    7,  # left_ear becomes left_clavicle
+    3,  # right_ear becomes right_clavicle
+    8,  # left_shoulder is left_shoulder
+    4,  # right_shoulder is right_shoulder
+    9,  # left_elbow is left_elbow
+    5,  # right_elbow is right_elbow
+    10,  # left_wrist is left_wrist
+    6,  # right_wrist is right_wrist
+    19,  # left_hip is left_hip
+    16,  # right_hip is right_hip
+    20,  # left_knee is left_knee
+    17,  # right_knee is right_knee
+    21,  # left_ankle is left_ankle
+    18,  # right_ankle is right_ankle
+]
 
-MAX_COLORS = 42
+POSETRACK_SKELETON = [
+    [16, 14],
+    [14, 12],
+    [17, 15],
+    [15, 13],
+    [12, 13],
+    [6, 12],
+    [7, 13],
+    [6, 7],
+    [6, 8],
+    [7, 9],
+    [8, 10],
+    [9, 11],
+    [2, 3],
+    [1, 2],
+    [1, 3],
+    [2, 4],
+    [3, 5],
+    [4, 6],
+    [5, 7]
+]
 
 # check python version
 assert sys.version_info >= (3, 6), '[!] This script requires Python >= 3.6'
@@ -40,7 +80,8 @@ H2 = 'Consider only the first n frames.' \
 @click.option('--out_dir_path', type=click.Path(), prompt='Enter \'out_dir_path\'', help=H1)
 @click.option('--max_frame', type=click.IntRange(min=0, max=900), prompt="Enter the number of frame to process" \
            + " (integer between 0 and 900)", help=H2)
-def main(out_dir_path, max_frame):
+@click.option('--use_posetrack_skeleton', is_flag=True, help='Use the PoseTrack skeleton')
+def main(out_dir_path, max_frame, use_posetrack_skeleton):
     # type: (str) -> None
     """
     Script for annotation conversion (from JTA format to PoseTrack format)
@@ -72,17 +113,30 @@ def main(out_dir_path, max_frame):
                 print('[!] error during conversion.')
                 print('\ttry using JSON files with the original nomenclature.')
 
-            posetrack_dict = {
-                'images': [],
-                'annotations': [],
-                'categories': [{
-                    'supercategory': 'person',
-                    'id': 1,
-                    'name': 'person',
-                    'keypoints': Joint.NAMES,
-                    'skeleton': Pose.SKELETON
-                }]
-            }
+            if use_posetrack_skeleton:
+                posetrack_dict = {
+                    'images': [],
+                    'annotations': [],
+                    'categories': [{
+                        'supercategory': 'person',
+                        'id': 1,
+                        'name': 'person',
+                        'keypoints': [Joint.NAMES[index] for index in index_mapping],
+                        'skeleton': POSETRACK_SKELETON
+                    }]
+                }
+            else:
+                posetrack_dict = {
+                    'images': [],
+                    'annotations': [],
+                    'categories': [{
+                        'supercategory': 'person',
+                        'id': 1,
+                        'name': 'person',
+                        'keypoints': Joint.NAMES,
+                        'skeleton': Pose.SKELETON
+                    }]
+                }
 
             for frame_number in range(0, max_frame):
 
@@ -109,6 +163,9 @@ def main(out_dir_path, max_frame):
                         continue
 
                     annotation = pose.posetrack_annotation
+                    if use_posetrack_skeleton:
+                        nested_keypoints = [annotation['keypoints'][3 * index:3 * (index+1)] for index in index_mapping]
+                        annotation['keypoints'] = [item for keypoints in nested_keypoints for item in keypoints]
                     annotation['image_id'] = image_id
                     annotation['id'] = image_id * 100000 + int(p_id)
                     annotation['category_id'] = 1
