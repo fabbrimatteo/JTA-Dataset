@@ -61,6 +61,13 @@ After the data download, your `JTA-Dataset` directory will contain the following
       ```bash
       python coco_style_convert.py --out_dir_path='coco_annotations'
       ```
+- `posetrack_style_convert.py`: Python script for annotation conversion (from JTA format to PoseTrack18 format).
+    - requires Python >= 3.6 (see [`requirements.txt`](https://github.com/fabbrimatteo/JTA-Dataset/blob/master/requirements.txt) for more details)
+    - use `python posetrack_style_convert.py --help` to read the help message
+    - usage example: 
+      ```bash
+      python posetrack_style_convert.py --out_dir_path='posetrack_annotations --max_frame=200'
+      ```
       
 - `joint.py` and `pose.py`: support classes for the scripts.
 
